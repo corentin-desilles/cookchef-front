@@ -1,7 +1,9 @@
+import RecipeForm from './components/RecipeForm/RecipeForm';
+
 function Admin() {
   return (
     <div className="d-flex flex-column flex-fill align-items-center p-20">
-      hello
+      <RecipeForm />
     </div>
   );
 }
