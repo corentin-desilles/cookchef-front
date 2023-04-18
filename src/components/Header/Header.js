@@ -2,6 +2,7 @@ import styles from './Header.module.scss';
 import cookchef from '../../assets/cookchef.png';
 import { useState } from 'react';
 import HeaderMenu from './HeaderMenu/HeaderMenu';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -9,9 +10,15 @@ function Header() {
   return (
     <header className={`${styles.header} d-flex flex-row align-items-center`}>
       <div className="flex-fill">
-        <img src={cookchef} alt="logo cookchef" />
+        <NavLink to="/">
+          <img src={cookchef} alt="logo cookchef" />
+        </NavLink>
       </div>
       <ul className={styles.headerList}>
+        <NavLink to="/admin">
+          {' '}
+          <button className="btn btn-primary mr-15">Ajouter une recette</button>
+        </NavLink>
         <button className="mr-5 btn btn-reverse-primary">
           <i className="fa-solid fa-heart mr-5"></i>
           <span>Wishlist</span>

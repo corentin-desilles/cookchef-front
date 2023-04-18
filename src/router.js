@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 
 const HomePage = lazy(() => import('./pages/Homepage/Homepage'));
-// const Admin = lazy(() => import('./pages/Admin/Admin'));
+const Admin = lazy(() => import('./pages/Admin/Admin'));
 
 export const router = createBrowserRouter([
   {
@@ -14,10 +14,10 @@ export const router = createBrowserRouter([
         index: true,
         element: <HomePage />,
       },
-      //   {
-      //     path: 'admin',
-      //     element: <Admin />,
-      //   },
+      {
+        path: 'admin',
+        element: <Admin />,
+      },
     ],
   },
 ]);
