@@ -1,4 +1,5 @@
-import Homepage from './pages/Homepage/Homepage';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import styles from './App.module.scss';
@@ -10,7 +11,11 @@ function App() {
   return (
     <div className={`d-flex flex-column ${styles.appContainer}`}>
       <Header />
-      <Homepage />
+      <div className="flex-fill d-flex flex-column">
+        <Suspense>
+          <Outlet />
+        </Suspense>
+      </div>
       <Footer />
     </div>
   );

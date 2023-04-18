@@ -1,8 +1,9 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style/index.scss';
-import App from './App';
 import { ApiContext } from './context/ApiContext';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById('root');
@@ -10,8 +11,8 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <ApiContext.Provider value="https://restapi.fr/api/recipes">
-      <App />
+    <ApiContext.Provider value="https://restapi.fr/api/recipe">
+      <RouterProvider router={router} />
     </ApiContext.Provider>
   </StrictMode>
 );
