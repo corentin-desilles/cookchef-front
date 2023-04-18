@@ -31,7 +31,13 @@ function Homepage() {
     }
     fetchRecipes();
     return () => (cancel = true);
-  });
+  }, [BASE_URL_API]);
+
+  function updateRecipe(updatedRecipe) {
+    setRecipes(
+      recipes.map(r => (r._id === updatedRecipe._id ? updatedRecipe : r))
+    );
+  }
 
   return (
     <div className="flex-fill container p-20">
@@ -45,7 +51,11 @@ function Homepage() {
             {recipes
               .filter(r => r.title.toLowerCase().startsWith(filter))
               .map(r => (
-                <Recipe key={r._id} title={r.title} image={r.image} />
+                <Recipe
+                  key={r._id}
+                  recipe={r}
+                  toggleLikedRecipe={updateRecipe}
+                />
               ))}
           </div>
         )}
