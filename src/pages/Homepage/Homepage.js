@@ -1,8 +1,8 @@
-import styles from './Content.module.scss';
-import Recipe from '../Recipe/Recipe';
+import styles from './Homepage.module.scss';
+import Recipe from './components/Recipe/Recipe';
 import { data } from '../../data/recipes';
 import { useState } from 'react';
-import SearchBar from './SearchBar/SearchBar';
+import SearchBar from './components/SearchBar/SearchBar';
 
 function Content() {
   const recipes = data;
